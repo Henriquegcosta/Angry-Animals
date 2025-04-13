@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsw102ayucf7d"]
+
+[ext_resource type="PackedScene" uid="uid://tdy8j057ljm6" path="res://Scenes/Level/Level.tscn" id="1_ty4h1"]
+[ext_resource type="PackedScene" uid="uid://dmnutfenef1xa" path="res://Scenes/Cup/Cup.tscn" id="2_81nff"]
+[ext_resource type="PackedScene" uid="uid://cceotwv4asdw8" path="res://Scenes/Wall/Wall.tscn" id="3_fc4qx"]
+
+[node name="Level4" instance=ExtResource("1_ty4h1")]
+
+[node name="Marker2D" parent="." index="3"]
+position = Vector2(142, 259)
+
+[node name="Cup" parent="." index="4" instance=ExtResource("2_81nff")]
+position = Vector2(414, 456)
+
+[node name="Cup2" parent="." index="5" instance=ExtResource("2_81nff")]
+position = Vector2(736, 357)
+
+[node name="Cup3" parent="." index="6" instance=ExtResource("2_81nff")]
+position = Vector2(590, 275)
+
+[node name="Cup4" parent="." index="7" instance=ExtResource("2_81nff")]
+position = Vector2(872, 185)
+
+[node name="Wall" parent="." index="8" instance=ExtResource("3_fc4qx")]
+position = Vector2(962, 55)
+
+[node name="Wall2" parent="." index="9" instance=ExtResource("3_fc4qx")]
+position = Vector2(876, 7)
+rotation = 1.5708

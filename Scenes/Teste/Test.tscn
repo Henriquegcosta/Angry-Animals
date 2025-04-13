@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsal60nmvauy3"]
+
+[ext_resource type="Texture2D" uid="uid://c7fgwk0p32l7i" path="res://assets/scene/colored_castle.png" id="1_u6tru"]
+[ext_resource type="Texture2D" uid="uid://c3wxyvppjetqr" path="res://assets/player/parrot.png" id="2_0ef3y"]
+[ext_resource type="PhysicsMaterial" uid="uid://b7o7h5ythvuw8" path="res://Resources/BounceMath.tres" id="2_h2t81"]
+[ext_resource type="Texture2D" uid="uid://b06o38edrn61b" path="res://assets/env/elementWood015.png" id="3_daegy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_daegy"]
+radius = 31.0161
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2t81"]
+size = Vector2(433, 31)
+
+[node name="Test" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(552, 165)
+scale = Vector2(1.19, 1.19)
+texture = ExtResource("1_u6tru")
+
+[node name="Bird" type="RigidBody2D" parent="."]
+position = Vector2(420, 89)
+physics_material_override = ExtResource("2_h2t81")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bird"]
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_0ef3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
+shape = SubResource("CircleShape2D_daegy")
+
+[node name="Bird2" type="RigidBody2D" parent="."]
+position = Vector2(576, 85)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bird2"]
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_0ef3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird2"]
+shape = SubResource("CircleShape2D_daegy")
+
+[node name="Block" type="StaticBody2D" parent="."]
+position = Vector2(504, 534)
+
+[node name="Sprite2D" type="Sprite2D" parent="Block"]
+scale = Vector2(2, 0.5)
+texture = ExtResource("3_daegy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_h2t81")
